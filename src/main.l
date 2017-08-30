@@ -8,13 +8,13 @@ RA: 156072
 #include <stdio.h>
 %}
 
-end [a-zA-Z0-9_.-]+[^_. -]
+begin [a-zA-Z0-9_.-]+[^_. -]
 
-begin [a-zA-Z0-9_.-]*[a-zA-Z0-9]
+end [a-zA-Z0-9_.-]*[a-zA-Z0-9]
 
-rule {end}[@]{begin}
+rule {begin}[@]{end}
 
-erro {end}[@]{begin}[-_]
+erro {begin}[@]{end}[-_]
 
 
 %%
